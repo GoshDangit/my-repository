@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript DOM</title>
+<link rel="icon" type="image/x-icon" href="images/image.jpg">
+<style>
+body {
+padding: 5px;
+}
+</style>
+</head>
+<body id="body">
+  <header>
+    <div class='container'>
+      <h1 id='heady'>Item Lister</h1>
+    </div>
+    <div class='searchBar'>
+      <input type='text' class='formControl' id='filter' placeholder='Search items...'>
+    </div>
+  </header>   
+  <div class='container'>
+    <div id='main'>
+      <h2 class='title'>Add Items</h2>  
+      <form id="addForm">
+        <input type='text' id='item'>
+        <input type='submit' value='Submit'>
+      </form>
+      <h2>Items</h2>
+      <ul id="items" class='listGroup'>
+        <li class='listItem'>Item 1 <button class='xButton'>X</button></li>
+        <li class='listItem'>Item 2 <button class='xButton'>X</button></li>
+        <li class='listItem'>Item 3 <button class='xButton'>X</button></li>
+        <li class='listItem'>Item 4 <button class='xButton'>X</button></li>
+      </ul>
+    </div>
+  </div>  
+  <div id='output'>
+  </div>
+  <br>
+  <p id='para'></p>
+  <button style='color:blueviolet; padding: 20px; background-color:rgb(77, 241, 112); border-width: 2px; font-size: 15px' class='darkButton' id='button'>Click Here</button>
+  <br>
+  <br>
+  <div style='width:300px;height:100px;background-color:cornflowerblue;' id='box'></div>
+
+ <!-- <div id="div1">
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
+  </div> -->
+<br>
+  <button id='theButton'>Start machine</button>
+<p id ='thePara'>The machine is stopped.</p>
+
+
+  <script src="scripts/manipulatingDOM.js"></script>
+</body>
+</html>

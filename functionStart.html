@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Function</title>
+    <style>
+      p {
+        color: rgb(103, 39, 187);
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .msgBox {
+          color: rgb(39, 187, 96);
+          font-size: 20px;
+          width: 242px;
+          padding-left: 82px;
+          background-position: 25px center;
+          background-repeat: no-repeat;
+
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+<button id= 'otherButton'>Button</button>
+
+
+
+  </body>
+  <script>
+
+const otherButton = document.getElementById('otherButton')
+
+function displayMessage(msgText, msgType) {
+const html = document.querySelector('html');
+
+const panel = document.createElement('div');
+panel.setAttribute('class','msgBox');
+html.appendChild(panel);
+
+const msg = document.createElement('p');
+msg.textContent = msgText;
+panel.appendChild(msg);
+
+const closeBtn = document.createElement('button');
+closeBtn.textContent = 'x';
+panel.appendChild(closeBtn);
+
+closeBtn.addEventListener('click', () => panel.parentNode.removeChild(panel));
+
+if (msgType === 'warning') {
+  msg.style.backgroundImage = 'url(icons/warning.png)';
+  panel.style.backgroundColor = 'red';
+} else if (msgType === 'chat') {
+  msg.style.backgroundImage = 'url(icons/chat.png)';
+  panel.style.backgroundColor = 'aqua';
+} else {
+  msg.style.paddingLeft = '20px';
+}
+
+
+      }
+
+
+otherButton.addEventListener('click', () => displayMessage('Nathan: Hey there, would you like to chat?', 'chat'));
+
+
+
+  </script>
+
+</html>

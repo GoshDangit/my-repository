@@ -1,0 +1,107 @@
+<!-- Block vs Inline-->
+<em>Emphasis is inline</em>
+
+<p>paragraph is block</p><p>As you can see</p>
+
+
+<p>Dogs are silly.</p>
+
+<p>Dogs        are
+         silly.</p>
+
+
+         <ul>games
+             <li>Diablo</li>
+             <li>Warcraft</li>
+         </ul>
+
+         <ol>Favorite games
+             <li>Diablo</li>
+             <li>Warcraft</li>
+         </ol>
+
+
+<p>I am <em>glad</em> you weren't <em>late</em>.</p>
+
+<p>This liquid is <strong>highly toxic</strong> — if you drink it, <strong>you may <em>die</em></strong>.</p>
+
+<p>Remember an image can be a link as well as text. In fact, just about anything can be a link.</p>
+
+<a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US"
+   download="firefox-latest-64bit-installer.exe">                                                        <!--download atribute specifies default file name-->
+  Download Latest Firefox for Windows (64-bit) (English, US)
+</a>
+
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+
+<a href="mailto">Send email to nowhere. No address means it will bring an empty adress bar up for the user.</a>
+
+<p><a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+    Send mail with cc, bcc, subject and body
+  </a> Question mark after the address to separate, percent signs for spaces and ampersands for separation of fields.
+</p>
+
+<p>Here below is a blockquote...</p>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+  <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+  Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+</blockquote>
+
+
+<p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+    for short quotations that don't require paragraph breaks.</q></p>
+    
+
+<p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+<p>I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with the chainsaw.</p>
+
+
+<p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+<p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+<p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+<br>
+<br>
+
+<pre><code>var para = document.querySelector('p');
+
+  para.onclick = function() {
+    alert('Owww, stop poking me!');
+  }</code></pre>
+  
+  <p>You shouldn't use presentational elements like <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.</p>
+  
+  <p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+  
+  <p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+  
+  <pre>$ <kbd>ping mozilla.org</kbd>
+  <samp>PING mozilla.org (63.245.215.20): 56 data bytes
+  64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+  
+  <time datetime="2016-01-20">20 January 2016</time>
+
+  <br>
+
+  <!-- Standard simple date -->
+<time datetime="2016-01-20">20 January 2016</time>
+<!-- Just year and month -->
+<time datetime="2016-01">January 2016</time>
+<!-- Just month and day -->
+<time datetime="01-20">20 January</time>
+<!-- Just time, hours and minutes -->
+<time datetime="19:30">19:30</time>
+<!-- You can do seconds and milliseconds too! -->
+<time datetime="19:30:01.856">19:30:01.856</time>
+<!-- Date and time -->
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+<!-- Date and time with timezone offset -->
+<time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time>
+<!-- Calling out a specific week number -->
+<time datetime="2016-W04">The fourth week of 2016</time>
+
+<p>Warning: Divs are so convenient to use that it's easy to use them too much. As they carry no semantic value, they just clutter your HTML code. 
+  Take care to use them only when there is no better semantic solution and try to reduce their usage to the minimum otherwise you'll have a hard time updating and maintaining your documents.</p>
+    

@@ -1,0 +1,3 @@
+Blocking  - When a web app runs in a browser and it executes an intensive chunk of code without returning control to the browser.
+
+Thread - Basically a single process that a program can use to complete tasks. Each thread can only do a single task at once:

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple setInterval clock</title>
+    <style>
+      p {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+      
+    
+    <p class="clock">Time Elapsed: 00:00:00</p>
+    <button id= 'startButton'>START</button>
+    <button id= 'pauseButton'>PAUSE</button>
+    <button id= 'resetButton'>RESET</button>
+    
+
+    <script>
+      const body = document.querySelector('body');
+      const startButton = document.querySelector('#startButton');
+      const pauseButton = document.querySelector('#pauseButton');
+      const resetButton = document.querySelector('#resetButton');
+      const clock = document.querySelector('.clock');
+      
+      let stopWatch;
+      let origin = 0;
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+
+      let startTime = Date.now();
+      let elapsedTime = Date.now() - startTime;
+
+       function incrementOrigin() {
+           origin++;
+           hours = Math.floor(origin / 3600);
+           minutes = Math.floor((origin % 3600) / 60);
+           seconds = (origin % 60);
+           if (seconds < 10 && minutes < 10 && hours < 10) {                                    // all below 10
+            clock.textContent = `Time Elapsed: 0${hours}:0${minutes}:0${seconds}`;       
+           } else if (seconds >= 10 && minutes < 10 && hours < 10) {                            // minutes and hours below 10
+            clock.textContent = `Time Elapsed: 0${hours}:0${minutes}:${seconds}`;
+           } else if (seconds >= 10 && minutes >= 10 && hours < 10) {                           // only hours below 10
+            clock.textContent = `Time Elapsed: 0${hours}:${minutes}:${seconds}`;
+           } else if (seconds >= 10 && minutes < 10 && hours >= 10) {                           // only minutes below 10
+            clock.textContent = `Time Elapsed: ${hours}:0${minutes}:${seconds}`;
+           } else if (seconds < 10 && minutes >= 10 && hours >= 10) {                           // only seconds below 10
+            clock.textContent = `Time Elapsed: ${hours}:${minutes}:0${seconds}`;
+           } else if (seconds < 10 && minutes < 10 && hours >= 10) {                            // minutes and seconds below 10
+            clock.textContent = `Time Elapsed: ${hours}:0${minutes}:0${seconds}`;   
+           } else if (seconds < 10 && minutes >= 10 && hours < 10) {                            // hours and seconds below
+            clock.textContent = `Time Elapsed: 0${hours}:${minutes}:0${seconds}`;
+           } else if (seconds >= 10 && minutes >= 10 && hours >= 10) {                          // none below
+            clock.textContent = `Time Elapsed: ${hours}:${minutes}:0${seconds}`;       
+       }
+    }
+
+
+        // let displayHours = (hours < 10) ? '0' + hours : hours;                       // this is how they did it
+        // let displayMinutes = (minutes < 10) ? '0' + minutes : minutes;
+        // let displaySeconds = (seconds < 10) ? '0' + seconds : seconds;
+
+
+       function startStopWatch() {
+        stopWatch = setInterval(incrementOrigin, 1000);
+        body.removeChild(startButton);                                              // This and what follows needed to be changed to 'startButton.disabled = true (or false)'
+       }
+
+       function pause() {
+         clearInterval(stopWatch);
+         body.appendChild(startButton);
+       }
+
+       function reset() {
+         origin = 0;
+         clock.textContent = `Time Elapsed: 00:00:00`;
+         clearInterval(stopWatch);
+         body.appendChild(startButton);
+       }
+
+       startButton.addEventListener('click', startStopWatch);
+
+       pauseButton.addEventListener('click', pause);
+
+       resetButton.addEventListener('click', reset);
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+
+      
+      
+      
+
+
+
+
+
+    
+    
+
+
+      
+    </script>
+  </body>
+</html>
