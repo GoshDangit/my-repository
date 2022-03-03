@@ -26,9 +26,9 @@
             });
         }
 
-        let coffee = fetchAndDecode('coffe.jpg', 'blob');
-        let tea = fetchAndDecode('tea.jpg', 'blob');
-        let description = fetchAndDecode('description.txt', 'text');
+        let coffee = fetchAndDecode('images/coffee.jpg', 'blob');
+        let tea = fetchAndDecode('images/tea.jpg', 'blob');
+        let description = fetchAndDecode('text/description.txt', 'text');
 
         Promise.all([coffee, tea, description]).then(values => {
             console.log(values);

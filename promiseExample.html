@@ -7,62 +7,45 @@
   <body>
     <p>This is my page</p>
     <script>
-     let promise = fetch('images/coffee.jpg');
 
-     let promise2 = promise.then(response => {
-<<<<<<< HEAD
-     if (!response.ok) {
-     throw new Error(`HTTP error! status: ${response.status}`);
-     } else {
-     return response.blob();
-     }
-     });
-=======
-      if (!response.ok) {
-     throw new Error(`HTTP error! status: ${response.status}`);
-      } else {
-      return response.blob();
-      }
-    });
->>>>>>> 88f7b41a6c6b9417b9354d6166e402681f10e379
+let promise = fetch('images/coffee.jpg');
 
-     let promise3 = promise2.then(myBlob => {
-     let objectURL = URL.createObjectURL(myBlob);
-     let image = document.createElement('img');
-     image.src = objectURL;
-     document.body.appendChild(image);
-<<<<<<< HEAD
+let promise2 = promise.then(response => {
+if (!response.ok) {
+throw new Error(`HTTP error! status: ${response.status}`);
+} else {
+return response.blob();
+}
+});
+
+let promise3 = promise2.then(myBlob => {
+let objectURL = URL.createObjectURL(myBlob);
+let image = document.createElement('img');
+image.src = objectURL;
+document.body.appendChild(image);
      
-     });
+});
 
-     // could also be written like this:
-=======
+// could also be written like this:
 
-     });
-      
-     let errorCase = promise3.catch(e => {
-       console.log('There has been a problem with your fetch operation: ' + e.message);
-     });
-     
->>>>>>> 88f7b41a6c6b9417b9354d6166e402681f10e379
+fetch('coffee.jpg')
+.then(response => {             // Instrumental to Promises: 'bear in mind that the value returned by a fulfilled promise becomes the parameter passed to the next .then() block's callback function.'
+if (!response.ok) {
+throw new Error(`HTTP error! status: ${response.status}`);
+} else {
+return response.blob();
+}
+})
+.then(myBlob => {
+let objectURL = URL.createObjectURL(myBlob);
+let image = document.createElement('img');
+image.src = objectURL;
+document.body.appendChild(image);
+})
+.catch(e => {
+console.log('There has been a problem with your fetch operation: ' + e.message);
+});
 
-     fetch('coffee.jpg')
-     .then(response => {             // Instrumental to Promises: 'bear in mind that the value returned by a fulfilled promise becomes the parameter passed to the next .then() block's callback function.'
-     if (!response.ok) {
-     throw new Error(`HTTP error! status: ${response.status}`);
-     } else {
-     return response.blob();
-     }
-     })
-     .then(myBlob => {
-     let objectURL = URL.createObjectURL(myBlob);
-     let image = document.createElement('img');
-     image.src = objectURL;
-     document.body.appendChild(image);
-     })
-     .catch(e => {
-     console.log('There has been a problem with your fetch operation: ' + e.message);
-     });
-    </script>
+</script>
   </body>
 </html>
