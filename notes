@@ -1,3 +1,30 @@
 Blocking  - When a web app runs in a browser and it executes an intensive chunk of code without returning control to the browser.
 
-Thread - Basically a single process that a program can use to complete tasks. Each thread can only do a single task at once:
+Thread - Basically a single process that a program can use to complete tasks. Each thread can only do a single task at once. Javascript is traditionally single-threaded.
+
+Web Workers - Created to offload some expensive processes from Javascript.
+
+alert() - Terrible for use in real world applications
+
+<divs> - easy to use but really try to resist over using them and use only when something better is not available
+
+Event Queue - Where async stuff and promises go
+
+Callback Hell:
+Summary
+
+    Don't nest functions. Give them names and place them at the top level of your program
+    Use function hoisting to your advantage to move functions 'below the fold'
+    Handle every single error in every one of your callbacks. Use a linter like standard to help you with this.
+    Create reusable functions and place them in a module to reduce the cognitive load required to understand your code. Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
+
+The most important aspect of avoiding callback hell is moving functions out of the way so that the programs flow can be more easily understood without newcomers having to wade through all the detail of the functions to get to the meat of what the program is trying to do. 
+
+ A Rule for Async - you can't include an async code block that returns a result, which you then rely on later in a sync code block. You just can't guarantee that the async function will return before the browser has processed the sync block.
+
+ 
+Pending - The initial state of a promise before it has neither succeeded nor failed.
+
+catch() is really important because error handling is really important and this allows you to control what happens when an error occurs. Retry, display a message, display something else,etc
+
+Instrumental to Promises: 'bear in mind that the value returned by a fulfilled promise becomes the parameter passed to the next .then() block's callback function.'
